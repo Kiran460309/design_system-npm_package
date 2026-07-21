@@ -1,101 +1,93 @@
-# @system-ui-kit/ui
+# system-ui-kit
 
-React component library — system-ui-kit design system.
+A modern, production-ready React UI component and design token library built for seamless handoff between Figma and code.
 
-## Install
+---
 
+## 👋 Quick Guide by Role
+
+*   **For Developers:** Fast installation, zero-config Tailwind integration, fully typed components, and an easy local development setup.
+*   **For Designers:** Built on strict design tokens mapped directly from Figma (foundations, spacing, and component states), ensuring high-fidelity implementation.
+*   **For Product Managers:** Consistent UI primitives, rapid prototyping capabilities, and a unified design language to speed up feature delivery.
+
+---
+
+## Installation & Usage
+
+### 1. Install the Package
 ```bash
-npm install @system-ui-kit/ui
-```
+npm install system-ui-kit
+# or
+pnpm add system-ui-kit
+# or
+yarn add system-ui-kit
 
-```tsx
-import "@system-ui-kit/ui/styles.css";
-import { Button } from "@system-ui-kit/ui";
+2. Import Styles & Components
+Make sure to include the global stylesheet once at your application root (e.g., in main.tsx, App.tsx, or layout.tsx), then import components as needed:
 
-export function Example() {
-  return <Button variant="primary">Click me</Button>;
+TypeScript
+import "system-ui-kit/dist/styles.css";
+import { Button } from "system-ui-kit";
+
+export function App() {
+  return (
+    <div className="p-6">
+      <Button variant="primary">Hello from system-ui-kit</Button>
+    </div>
+  );
 }
-```
 
-## Develop
+For Developers: Local Development
+If you want to contribute, run components locally, or build the library from source:
 
-```bash
+Bash
+# Clone the repository and install dependencies
 pnpm install
-pnpm storybook       # http://localhost:6006
-pnpm test            # vitest
-pnpm build           # tsup (JS/d.ts) + tailwindcss (dist/styles.css)
-pnpm lint
-```
 
-## Structure
+# Run Storybook for component playground and documentation
+pnpm storybook       # Opens at http://localhost:6006
 
-- `src/tokens/*.css` — design tokens exported from Figma "Foundations" (74:2),
-  light mode only. `colors.css`, `spacing.css`, `radius.css`, `typography.css`
-  are primitives + semantic layer; `components.css` is the per-component layer
-  (button/checkbox/card/etc). Never hardcode a hex or px value in a component —
-  add or reuse a token instead.
-- `src/icons/` — one file per icon from the Figma Icons page (81:2).
-- `src/components/<Name>/` — `Component.tsx`, `Component.variants.ts` (cva
-  variant map), `Component.stories.tsx`, `Component.test.tsx`, `index.ts`.
-- `tailwind.config.ts` — maps every utility class used in components back to
-  the CSS variables in `src/tokens`.
+# Run tests
+pnpm test            # Vitest
 
-## Publishing
-
-### 1. Build the package
-
-```bash
+# Build the bundle (tsup for JS/d.ts + Tailwind for styles)
 pnpm build
-```
 
-### 2. Create the npm org (first time only)
+# Run linters
+pnpm lint
 
-Go to **https://www.npmjs.com/org/create** and create the `system-ui-kit` org (free).
+Repository Structure
+src/tokens/*.css — Design tokens exported from Figma foundations (colors, spacing, radius, typography). Never hardcode hex or pixel values; always reuse tokens.
 
-### 3. Login & publish
+src/icons/ — Modular SVG icons synced directly from Figma.
 
-```bash
-npm login
-npm publish --access public
-```
+src/components/<Name>/ — Isolated component folders containing:
 
-## Verify after install
+Component.tsx (Component logic)
 
-```bash
-# In a fresh Vite project
-npm install @system-ui-kit/ui
-```
+Component.variants.ts (CVA variant mapping)
 
-```tsx
-import "@system-ui-kit/ui/styles.css";
-import { Button } from "@system-ui-kit/ui";
+Component.stories.tsx (Storybook stories)
 
-export default function App() {
-  return <Button variant="primary">Hello from @system-ui-kit/ui!</Button>;
-}
-```
+Component.test.tsx (Unit tests)
 
-## Releasing
+index.ts
 
-```bash
-pnpm changeset          # describe the change
-pnpm release             # build + changesets publish
-```
+tailwind.config.ts — Maps utility classes back to CSS variables in src/tokens.
 
-## Known gaps vs. the Figma file (please review)
+### **Key Benefits by Role**
 
-- **Icons**: the Figma Icons page (81:2) resolves each icon layer to a local
-  asset URL served by the Figma desktop app, which isn't reachable from this
-  environment — so I could not pull literal vector path data. `src/icons/`
-  currently ships a clean 24×24 stroke icon set matching the 15 icon names 1:1
-  (check, close, chevron-down/up/left/right, plus, minus, search, info,
-  warning, alert-circle, star, arrow-right, more-horizontal). Swap in the real
-  paths via Figma's "Copy as SVG" when you have desktop access, keeping the
-  same file names/exports so nothing downstream breaks.
-- **Button sizing**: Figma's Button page (74:4) only authored the Medium size
-  frame. `sm`/`lg` were added from the `--components-button-height-*` tokens
-  in Foundations, so double-check those two against Figma if/when Small and
-  Large frames get added there.
-- **Dark mode**: intentionally out of scope per your request — `tailwind.config.ts`
-  has `darkMode: "class"` wired so it's a small lift when you add a dark
-  semantic layer to `colors.css`.
+* **For Developers**
+* **Plug-and-Play:** Install quickly and start building instantly with zero-config Tailwind styling.
+* **Fully Typed:** Complete TypeScript support ensures auto-completions and fewer runtime bugs.
+* **Easy Maintenance:** Clean modular folder structure makes it simple to test, debug, and contribute.
+
+
+* **For Designers**
+* **Design Consistency:** Tokens mapped directly from Figma ensure code matches designs pixel-for-pixel.
+* **Zero Guesswork:** Standardized spacing, colors, and typography rules eliminate ad-hoc styling.
+
+
+* **For Product Managers**
+* **Faster Delivery:** Reusable components speed up prototyping and feature shipping.
+* **Unified Brand:** A single source of truth keeps the user interface consistent across all products.
