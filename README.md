@@ -1,93 +1,102 @@
-# system-ui-kit
+<div align="center">
 
-A modern, production-ready React UI component and design token library built for seamless handoff between Figma and code.
+# @system-ui-kit/ui
+
+**A production-ready React component and design token library built for seamless Figma-to-code handoff.**
+
+[![npm version](https://img.shields.io/npm/v/@system-ui-kit/ui.svg)](https://www.npmjs.com/package/@system-ui-kit/ui)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6.svg)](#)
+
+</div>
 
 ---
 
-## 👋 Quick Guide by Role
+## Overview
 
-*   **For Developers:** Fast installation, zero-config Tailwind integration, fully typed components, and an easy local development setup.
-*   **For Designers:** Built on strict design tokens mapped directly from Figma (foundations, spacing, and component states), ensuring high-fidelity implementation.
-*   **For Product Managers:** Consistent UI primitives, rapid prototyping capabilities, and a unified design language to speed up feature delivery.
+`@system-ui-kit/ui` is a token-driven component library that keeps design and engineering in sync. Every color, spacing value, and typography rule is mapped 1:1 from Figma foundations, so what's designed is exactly what ships.
 
----
+| | |
+|---|---|
+| **Developers** | Zero-config Tailwind integration, fully typed components, instant install-and-build workflow |
+| **Designers** | Strict token architecture (Primitives → Semantic → Component) mirrors Figma foundations pixel-for-pixel |
+| **Product Managers** | Reusable primitives and a single source of truth accelerate prototyping and cross-product consistency |
 
-## Installation & Usage
+## Table of Contents
 
-### 1. Install the Package
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Local Development](#local-development)
+- [Repository Structure](#repository-structure)
+- [Design Tokens](#design-tokens)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Installation
+
 ```bash
-npm install system-ui-kit
+npm install @system-ui-kit/ui
 # or
-pnpm add system-ui-kit
+pnpm add @system-ui-kit/ui
 # or
-yarn add system-ui-kit
+yarn add @system-ui-kit/ui
+```
 
-2. Import Styles & Components
-Make sure to include the global stylesheet once at your application root (e.g., in main.tsx, App.tsx, or layout.tsx), then import components as needed:
+## Quick Start
 
-TypeScript
-import "system-ui-kit/dist/styles.css";
-import { Button } from "system-ui-kit";
+Import the global stylesheet once at your app root (`main.tsx`, `App.tsx`, or `layout.tsx`), then import components as needed.
+
+```tsx
+import "@system-ui-kit/ui/dist/styles.css";
+import { Button } from "@system-ui-kit/ui";
 
 export function App() {
   return (
     <div className="p-6">
-      <Button variant="primary">Hello from system-ui-kit</Button>
+      <Button variant="primary">Hello from @system-ui-kit/ui</Button>
     </div>
   );
 }
+```
 
-For Developers: Local Development
-If you want to contribute, run components locally, or build the library from source:
+## Local Development
 
-Bash
-# Clone the repository and install dependencies
-pnpm install
-
-# Run Storybook for component playground and documentation
-pnpm storybook       # Opens at http://localhost:6006
-
-# Run tests
+```bash
+pnpm install         # Install dependencies
+pnpm storybook       # Playground/docs — http://localhost:6006
 pnpm test            # Vitest
+pnpm build           # tsup (JS/.d.ts) + Tailwind (styles)
+pnpm lint            # Linters
+```
 
-# Build the bundle (tsup for JS/d.ts + Tailwind for styles)
-pnpm build
+## Repository Structure
+src/
+├── tokens/*.css # Design tokens from Figma foundations
+│ (colors, spacing, radius, typography)
+├── icons/ # Modular SVG icons synced from Figma
+├── components/
+│ └── <Name>/
+│ ├── Component.tsx # Logic
+│ ├── Component.variants.ts # CVA variant mapping
+│ ├── Component.stories.tsx # Storybook stories
+│ ├── Component.test.tsx # Unit tests
+│ └── index.ts
+tailwind.config.ts # Maps utility classes to CSS variables in src/tokens
 
-# Run linters
-pnpm lint
+> **Convention:** Never hardcode hex or pixel values in components — always reference a token.
 
-Repository Structure
-src/tokens/*.css — Design tokens exported from Figma foundations (colors, spacing, radius, typography). Never hardcode hex or pixel values; always reuse tokens.
+## Design Tokens
 
-src/icons/ — Modular SVG icons synced directly from Figma.
+Three-tier architecture so Figma changes propagate predictably through the codebase:
 
-src/components/<Name>/ — Isolated component folders containing:
+1. **Primitives** — raw values (e.g. `blue.500`, `space.4`)
+2. **Semantic** — purpose-driven aliases (e.g. `color.action.primary`, `space.gap.md`)
+3. **Component** — scoped overrides (e.g. `button.radius`)
 
-Component.tsx (Component logic)
+## Contributing
 
-Component.variants.ts (CVA variant mapping)
+Open an issue for significant changes before a PR. Ensure `pnpm lint` and `pnpm test` pass locally.
 
-Component.stories.tsx (Storybook stories)
+## License
 
-Component.test.tsx (Unit tests)
-
-index.ts
-
-tailwind.config.ts — Maps utility classes back to CSS variables in src/tokens.
-
-### **Key Benefits by Role**
-
-* **For Developers**
-* **Plug-and-Play:** Install quickly and start building instantly with zero-config Tailwind styling.
-* **Fully Typed:** Complete TypeScript support ensures auto-completions and fewer runtime bugs.
-* **Easy Maintenance:** Clean modular folder structure makes it simple to test, debug, and contribute.
-
-
-* **For Designers**
-* **Design Consistency:** Tokens mapped directly from Figma ensure code matches designs pixel-for-pixel.
-* **Zero Guesswork:** Standardized spacing, colors, and typography rules eliminate ad-hoc styling.
-
-
-* **For Product Managers**
-* **Faster Delivery:** Reusable components speed up prototyping and feature shipping.
-* **Unified Brand:** A single source of truth keeps the user interface consistent across all products.
+[MIT](./LICENSE)
