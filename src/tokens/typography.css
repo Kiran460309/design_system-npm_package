@@ -1,0 +1,34 @@
+/**
+ * Typography tokens
+ * Source: Figma "Foundations" page (node 74:2) — Primitives/font-size, font-weight, line-height.
+ * Font family: Inter (as used across all component text layers in Figma).
+ */
+:root {
+  --font-family-sans:
+    "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+
+  /* ---------- Primitives: font-size ---------- */
+  --primitives-font-size-xs: 12px;
+  --primitives-font-size-sm: 14px;
+  --primitives-font-size-base: 16px;
+  --primitives-font-size-lg: 18px;
+  --primitives-font-size-xl: 20px;
+  --primitives-font-size-2xl: 24px;
+  --primitives-font-size-3xl: 30px;
+  --primitives-font-size-4xl: 36px;
+  --primitives-font-size-5xl: 48px;
+
+  /* ---------- Primitives: font-weight ---------- */
+  --primitives-font-weight-regular: 400;
+  --primitives-font-weight-medium: 500;
+  --primitives-font-weight-semibold: 600;
+  --primitives-font-weight-bold: 700;
+
+  /* ---------- Primitives: line-height ---------- */
+  --primitives-line-height-none: 1;
+  --primitives-line-height-tight: 1.25;
+  --primitives-line-height-snug: 1.375;
+  --primitives-line-height-normal: 1.5;
+  --primitives-line-height-relaxed: 1.625;
+}

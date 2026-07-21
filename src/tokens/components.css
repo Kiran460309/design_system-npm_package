@@ -1,0 +1,249 @@
+/**
+ * Component tokens
+ * Source: Figma "Foundations" page (node 74:2) — Components layer.
+ * Every value here resolves back to a semantic token, never a raw primitive,
+ * so re-theming only ever requires editing colors.css / semantic layer.
+ */
+:root {
+  /* button / size */
+  --components-button-height-sm: var(--primitives-spacing-16);
+  --components-button-height-md: var(--primitives-spacing-20);
+  --components-button-height-lg: var(--primitives-spacing-24);
+  --components-button-padding-x: var(--primitives-spacing-16);
+  --components-button-padding-y: var(--primitives-spacing-8);
+  --components-button-gap: var(--primitives-spacing-4);
+  --components-button-radius: var(--primitives-radius-md);
+  --components-button-bg-primary: var(--semantic-bg-brand);
+  --components-button-bg-primary-hover: var(--semantic-bg-brand-hover);
+  --components-button-bg-primary-active: var(--semantic-bg-brand-active);
+  --components-button-bg-primary-disabled: var(--semantic-state-disabled-bg);
+  --components-button-bg-secondary: var(--semantic-bg-surface-secondary);
+  --components-button-bg-secondary-hover: var(--semantic-bg-surface-tertiary);
+  --components-button-bg-secondary-disabled: var(--semantic-state-disabled-bg);
+  --components-button-bg-outline: var(--semantic-bg-surface);
+  --components-button-text-primary: var(--semantic-text-on-brand);
+  --components-button-text-primary-disabled: var(--semantic-state-disabled-text);
+  --components-button-text-secondary: var(--semantic-text-primary);
+  --components-button-text-secondary-disabled: var(--semantic-state-disabled-text);
+  --components-button-text-outline: var(--semantic-text-primary);
+  --components-button-text-outline-disabled: var(--semantic-state-disabled-text);
+  --components-button-border-outline: var(--semantic-border-default);
+  --components-button-border-outline-hover: var(--semantic-border-strong);
+  --components-button-border-outline-disabled: var(--semantic-state-disabled-border);
+
+  /* icon-button */
+  --components-icon-button-size-sm: var(--primitives-spacing-16);
+  --components-icon-button-size-md: var(--primitives-spacing-24);
+  --components-icon-button-size-lg: var(--primitives-spacing-40);
+  --components-icon-button-radius: var(--primitives-radius-md);
+  --components-icon-button-bg-primary: var(--semantic-bg-brand);
+  --components-icon-button-bg-primary-disabled: var(--semantic-state-disabled-bg);
+  --components-icon-button-bg-secondary: var(--semantic-bg-surface-secondary);
+  --components-icon-button-icon-primary: var(--semantic-icon-on-brand);
+  --components-icon-button-icon-disabled: var(--semantic-icon-disabled);
+  --components-icon-button-icon-secondary: var(--semantic-icon-secondary);
+  --components-icon-button-icon-outline: var(--semantic-icon-primary);
+  --components-icon-button-border-outline: var(--semantic-border-default);
+
+  /* checkbox */
+  --components-checkbox-size: var(--primitives-spacing-10);
+  --components-checkbox-radius: var(--primitives-radius-sm);
+  --components-checkbox-bg-unchecked: var(--semantic-bg-surface);
+  --components-checkbox-bg-checked: var(--semantic-bg-brand);
+  --components-checkbox-bg-disabled: var(--semantic-state-disabled-bg);
+  --components-checkbox-border-unchecked: var(--semantic-border-default);
+  --components-checkbox-border-disabled: var(--semantic-state-disabled-border);
+  --components-checkbox-icon-checked: var(--semantic-icon-on-brand);
+
+  /* radio */
+  --components-radio-size: var(--primitives-spacing-10);
+  --components-radio-radius: var(--primitives-radius-full);
+  --components-radio-bg-unselected: var(--semantic-bg-surface);
+  --components-radio-bg-selected: var(--semantic-bg-brand);
+  --components-radio-bg-disabled: var(--semantic-state-disabled-bg);
+  --components-radio-border-unselected: var(--semantic-border-default);
+  --components-radio-border-selected: var(--semantic-border-brand);
+  --components-radio-border-disabled: var(--semantic-state-disabled-border);
+
+  /* switch */
+  --components-switch-width: var(--primitives-spacing-20);
+  --components-switch-height: var(--primitives-spacing-12);
+  --components-switch-thumb-size: var(--primitives-spacing-10);
+  --components-switch-radius: var(--primitives-radius-full);
+  --components-switch-bg-off: var(--semantic-bg-surface-tertiary);
+  --components-switch-bg-on: var(--semantic-bg-brand);
+  --components-switch-bg-disabled: var(--semantic-state-disabled-bg);
+  --components-switch-thumb-bg: var(--semantic-bg-surface);
+
+  /* slider */
+  --components-slider-track-height: var(--primitives-spacing-2);
+  --components-slider-thumb-size: var(--primitives-spacing-10);
+  --components-slider-radius: var(--primitives-radius-full);
+  --components-slider-bg-track: var(--semantic-bg-surface-tertiary);
+  --components-slider-bg-track-fill: var(--semantic-bg-brand);
+  --components-slider-bg-thumb: var(--semantic-bg-surface);
+  --components-slider-bg-track-disabled: var(--semantic-state-disabled-bg);
+
+  /* badge */
+  --components-badge-height: var(--primitives-spacing-12);
+  --components-badge-padding-x: var(--primitives-spacing-4);
+  --components-badge-radius: var(--primitives-radius-full);
+  --components-badge-bg-neutral: var(--semantic-bg-surface-secondary);
+  --components-badge-bg-brand: var(--semantic-bg-brand-subtle);
+  --components-badge-bg-success: var(--semantic-bg-success-subtle);
+  --components-badge-bg-warning: var(--semantic-bg-warning-subtle);
+  --components-badge-bg-danger: var(--semantic-bg-danger-subtle);
+  --components-badge-text-neutral: var(--semantic-text-primary);
+  --components-badge-text-brand: var(--semantic-text-brand);
+  --components-badge-text-success: var(--semantic-text-success);
+  --components-badge-text-warning: var(--semantic-text-warning);
+  --components-badge-text-danger: var(--semantic-text-danger);
+
+  /* chip */
+  --components-chip-height: var(--primitives-spacing-16);
+  --components-chip-padding-x: var(--primitives-spacing-6);
+  --components-chip-radius: var(--primitives-radius-full);
+  --components-chip-bg-default: var(--semantic-bg-surface-secondary);
+  --components-chip-bg-selected: var(--semantic-bg-brand-subtle);
+  --components-chip-bg-disabled: var(--semantic-state-disabled-bg);
+  --components-chip-text-default: var(--semantic-text-primary);
+  --components-chip-text-selected: var(--semantic-text-brand);
+  --components-chip-text-disabled: var(--semantic-state-disabled-text);
+  --components-chip-border-default: var(--semantic-border-default);
+  --components-chip-border-selected: var(--semantic-border-brand);
+
+  /* avatar */
+  --components-avatar-size-sm: var(--primitives-spacing-12);
+  --components-avatar-size-md: var(--primitives-spacing-20);
+  --components-avatar-size-lg: var(--primitives-spacing-28);
+  --components-avatar-radius: var(--primitives-radius-full);
+  --components-avatar-bg-default: var(--semantic-bg-surface-tertiary);
+  --components-avatar-text-initials: var(--semantic-text-primary);
+
+  /* text-field */
+  --components-text-field-height: var(--primitives-spacing-40);
+  --components-text-field-padding-x: var(--semantic-space-md);
+  --components-text-field-padding-y: var(--semantic-space-sm);
+  --components-text-field-gap: var(--semantic-space-xs);
+  --components-text-field-radius: var(--semantic-radius-control-md);
+  --components-text-field-bg-default: var(--semantic-bg-surface);
+  --components-text-field-bg-disabled: var(--semantic-state-disabled-bg);
+  --components-text-field-border-default: var(--semantic-border-default);
+  --components-text-field-border-focus: var(--semantic-border-focus);
+  --components-text-field-border-error: var(--semantic-border-danger);
+  --components-text-field-text-value: var(--semantic-text-primary);
+  --components-text-field-text-placeholder: var(--semantic-text-tertiary);
+  --components-text-field-text-disabled: var(--semantic-state-disabled-text);
+
+  /* textarea */
+  --components-textarea-min-height: var(--primitives-spacing-64);
+  --components-textarea-padding-x: var(--semantic-space-md);
+  --components-textarea-padding-y: var(--semantic-space-sm);
+  --components-textarea-radius: var(--semantic-radius-control-md);
+  --components-textarea-bg-default: var(--semantic-bg-surface);
+  --components-textarea-bg-disabled: var(--semantic-state-disabled-bg);
+  --components-textarea-border-default: var(--semantic-border-default);
+  --components-textarea-border-focus: var(--semantic-border-focus);
+  --components-textarea-border-error: var(--semantic-border-danger);
+  --components-textarea-text-value: var(--semantic-text-primary);
+  --components-textarea-text-placeholder: var(--semantic-text-tertiary);
+
+  /* select */
+  --components-select-height: var(--primitives-spacing-40);
+  --components-select-padding-x: var(--semantic-space-md);
+  --components-select-radius: var(--semantic-radius-control-md);
+  --components-select-gap: var(--semantic-space-xs);
+  --components-select-bg-default: var(--semantic-bg-surface);
+  --components-select-bg-menu: var(--semantic-bg-surface);
+  --components-select-bg-option-hover: var(--semantic-bg-surface-secondary);
+  --components-select-bg-option-selected: var(--semantic-bg-brand-subtle);
+  --components-select-border-default: var(--semantic-border-default);
+  --components-select-border-focus: var(--semantic-border-focus);
+  --components-select-text-value: var(--semantic-text-primary);
+  --components-select-text-placeholder: var(--semantic-text-tertiary);
+  --components-select-icon-chevron: var(--semantic-icon-secondary);
+
+  /* tooltip */
+  --components-tooltip-padding-x: var(--semantic-space-sm);
+  --components-tooltip-padding-y: var(--semantic-space-xs);
+  --components-tooltip-radius: var(--primitives-radius-sm);
+  --components-tooltip-bg: var(--semantic-bg-inverse);
+  --components-tooltip-text: var(--semantic-text-inverse);
+
+  /* alert */
+  --components-alert-padding-x: var(--semantic-space-md);
+  --components-alert-padding-y: var(--semantic-space-sm);
+  --components-alert-radius: var(--primitives-radius-md);
+  --components-alert-gap: var(--semantic-space-sm);
+  --components-alert-bg-success: var(--semantic-bg-success-subtle);
+  --components-alert-bg-warning: var(--semantic-bg-warning-subtle);
+  --components-alert-bg-danger: var(--semantic-bg-danger-subtle);
+  --components-alert-bg-info: var(--semantic-bg-info-subtle);
+  --components-alert-text-success: var(--semantic-text-success);
+  --components-alert-text-warning: var(--semantic-text-warning);
+  --components-alert-text-danger: var(--semantic-text-danger);
+  --components-alert-text-info: var(--semantic-text-info);
+
+  /* toast */
+  --components-toast-padding-x: var(--semantic-space-md);
+  --components-toast-padding-y: var(--semantic-space-sm);
+  --components-toast-radius: var(--primitives-radius-md);
+  --components-toast-gap: var(--semantic-space-sm);
+  --components-toast-bg-default: var(--semantic-bg-inverse);
+  --components-toast-bg-success: var(--semantic-bg-success);
+  --components-toast-bg-danger: var(--semantic-bg-danger);
+  --components-toast-text-default: var(--semantic-text-inverse);
+
+  /* card */
+  --components-card-padding: var(--semantic-space-lg);
+  --components-card-radius: var(--semantic-radius-card);
+  --components-card-gap: var(--semantic-space-sm);
+  --components-card-bg-default: var(--semantic-bg-surface);
+  --components-card-border-default: var(--semantic-border-subtle);
+  --components-card-border-selected: var(--semantic-border-brand);
+
+  /* modal */
+  --components-modal-padding: var(--semantic-space-xl);
+  --components-modal-radius: var(--primitives-radius-lg);
+  --components-modal-gap: var(--semantic-space-md);
+  --components-modal-bg-surface: var(--semantic-bg-surface);
+  --components-modal-bg-scrim: var(--semantic-bg-overlay);
+
+  /* tabs */
+  --components-tabs-height: var(--primitives-spacing-48);
+  --components-tabs-gap: var(--semantic-space-lg);
+  --components-tabs-padding-x: var(--semantic-space-sm);
+  --components-tabs-indicator-height: var(--primitives-spacing-2);
+  --components-tabs-text-active: var(--semantic-text-primary);
+  --components-tabs-text-inactive: var(--semantic-text-tertiary);
+  --components-tabs-border-indicator: var(--semantic-border-brand);
+
+  /* accordion */
+  --components-accordion-header-height: var(--primitives-spacing-48);
+  --components-accordion-padding-x: var(--semantic-space-md);
+  --components-accordion-radius: var(--primitives-radius-md);
+  --components-accordion-border-default: var(--semantic-border-subtle);
+  --components-accordion-bg-header-hover: var(--semantic-bg-surface-secondary);
+  --components-accordion-icon-chevron: var(--semantic-icon-secondary);
+
+  /* table */
+  --components-table-row-height: var(--primitives-spacing-48);
+  --components-table-header-height: var(--primitives-spacing-40);
+  --components-table-padding-x: var(--semantic-space-md);
+  --components-table-border-row: var(--semantic-border-subtle);
+  --components-table-bg-header: var(--semantic-bg-surface-secondary);
+  --components-table-bg-row-hover: var(--semantic-bg-surface-secondary);
+  --components-table-bg-row-selected: var(--semantic-bg-brand-subtle);
+  --components-table-text-header: var(--semantic-text-secondary);
+  --components-table-text-cell: var(--semantic-text-primary);
+
+  /* pagination */
+  --components-pagination-size: var(--primitives-spacing-32);
+  --components-pagination-gap: var(--semantic-space-xs);
+  --components-pagination-radius: var(--semantic-radius-control-sm);
+  --components-pagination-bg-default: var(--semantic-bg-surface);
+  --components-pagination-bg-active: var(--semantic-bg-brand);
+  --components-pagination-text-default: var(--semantic-text-secondary);
+  --components-pagination-text-active: var(--semantic-text-on-brand);
+  --components-pagination-border-default: var(--semantic-border-subtle);
+}

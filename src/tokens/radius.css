@@ -1,0 +1,23 @@
+/**
+ * Radius tokens
+ * Source: Figma "Foundations" page (node 74:2) — Primitives/radius and Semantic/radius.
+ */
+:root {
+  /* ---------- Primitives: radius ---------- */
+  --primitives-radius-none: 0;
+  --primitives-radius-xs: 2px;
+  --primitives-radius-sm: 4px;
+  --primitives-radius-md: 6px;
+  --primitives-radius-lg: 8px;
+  --primitives-radius-xl: 12px;
+  --primitives-radius-2xl: 16px;
+  --primitives-radius-3xl: 24px;
+  --primitives-radius-full: 9999px;
+
+  /* ---------- Semantic: radius ---------- */
+  --semantic-radius-control-sm: var(--primitives-radius-sm);
+  --semantic-radius-control-md: var(--primitives-radius-md);
+  --semantic-radius-control-lg: var(--primitives-radius-lg);
+  --semantic-radius-card: var(--primitives-radius-xl);
+  --semantic-radius-pill: var(--primitives-radius-full);
+}

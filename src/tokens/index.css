@@ -1,0 +1,9 @@
+/**
+ * @kiranshan/ui design tokens
+ * Import this once in your app (or via "@kiranshan/ui/styles.css" from the built package).
+ */
+@import "./colors.css";
+@import "./spacing.css";
+@import "./radius.css";
+@import "./typography.css";
+@import "./components.css";

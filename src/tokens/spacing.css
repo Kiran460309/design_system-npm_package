@@ -1,0 +1,40 @@
+/**
+ * Spacing tokens
+ * Source: Figma "Foundations" page (node 74:2) — Primitives/spacing and Semantic/space.
+ */
+:root {
+  /* ---------- Primitives: spacing ---------- */
+  --primitives-spacing-0: 0;
+  --primitives-spacing-1: 2px;
+  --primitives-spacing-2: 4px;
+  --primitives-spacing-3: 6px;
+  --primitives-spacing-4: 8px;
+  --primitives-spacing-5: 10px;
+  --primitives-spacing-6: 12px;
+  --primitives-spacing-7: 14px;
+  --primitives-spacing-8: 16px;
+  --primitives-spacing-10: 20px;
+  --primitives-spacing-12: 24px;
+  --primitives-spacing-14: 28px;
+  --primitives-spacing-16: 32px;
+  --primitives-spacing-20: 40px;
+  --primitives-spacing-24: 48px;
+  --primitives-spacing-28: 56px;
+  --primitives-spacing-32: 64px;
+  --primitives-spacing-40: 80px;
+  --primitives-spacing-48: 96px;
+  --primitives-spacing-56: 112px;
+  --primitives-spacing-64: 128px;
+
+  /* ---------- Semantic: space ---------- */
+  --semantic-space-xs: var(--primitives-spacing-4);
+  --semantic-space-sm: var(--primitives-spacing-8);
+  --semantic-space-md: var(--primitives-spacing-16);
+  --semantic-space-lg: var(--primitives-spacing-24);
+  --semantic-space-xl: var(--primitives-spacing-32);
+  --semantic-space-2xl: var(--primitives-spacing-48);
+
+  /* ---------- Primitives: border-width ---------- */
+  --primitives-border-width-hairline: 1px;
+  --primitives-border-width-thick: 2px;
+}
