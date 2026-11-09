@@ -100,4 +100,3 @@ Open an issue for significant changes before a PR. Ensure `pnpm lint` and `pnpm 
 ## License
 
 [MIT](./LICENSE)
-
