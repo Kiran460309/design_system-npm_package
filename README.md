@@ -11,7 +11,7 @@
 </div>
       
 --- 
-
+ 
 ## Overview
 
 `@system-ui-kit/ui` is a token-driven component library that keeps design and engineering in sync. Every color, spacing value, and typography rule is mapped 1:1 from Figma foundations, so what's designed is exactly what ships.
